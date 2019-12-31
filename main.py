@@ -9,6 +9,10 @@ def listall():
     with open("commands/listallcommand.cmds", 'r') as f_obj:
         cmd = f_obj.read()
         print(cmd)
+    currentcmd = "/scoreboard objectives list"
+    with open("recentcommand.txt", 'a') as f_obj:
+        json.dump(currentcmd, f_obj)
+        print("We saved it to your disk!")
 # create scoreboard
 def createsb():
     print("We will help you to create a scoreboard.")
@@ -84,8 +88,9 @@ def createsb():
         print("Converting...")
         currentcmd = "/scoreboard objectives add " + sbname + " armor " + sbdisplayname
         print("We are done! The command is " + currentcmd)
-    else:
-        print("We cannot reach the command!")
+    with open("recentcommand.txt", 'a') as f_obj:
+        json.dump(currentcmd, f_obj)
+        print("We saved it to your disk!")
 # show scoreboard
 def displaysb():
     sbname = input("Enter the scoreboard name(Not display name, Leave blank to clear the selected display): ")
@@ -106,6 +111,9 @@ def displaysb():
         print("Converting...")
         currentcmd = "/scoreboard objectives setdisplay belowName " + sbname
         print("We are done! The command is " + currentcmd)
+    with open("recentcommand.txt", 'a') as f_obj:
+        json.dump(currentcmd, f_obj)
+        print("We saved it to your disk!")
 # modify scoreboard
 def modifysb():
     print("This wizard will help you to modify your scoreboard.")
@@ -158,12 +166,18 @@ def modifysb():
     if udo == "4":
         currentcmd = "/scoreboard players reset " + who + " " + sbname
     print("We are done! The command is " + currentcmd)
+    with open("recentcommand.txt", 'a') as f_obj:
+        json.dump(currentcmd, f_obj)
+        print("We saved it to your disk!")
 # delete a scoreboard
 def deletesb():
     sbname = input("Scoreboard name: ")
     print("Converting...")
     currentcmd = "/scoreboard objectives remove " + sbname + " "
     print("We are done! The command is " + currentcmd)
+    with open("recentcommand.txt", 'a') as f_obj:
+        json.dump(currentcmd, f_obj)
+        print("We saved it to your disk!")
 # endfunction
 
 
@@ -174,7 +188,8 @@ print("2. Create a scoreboard")
 print("3. Display a scoreboard")
 print("4. Modify a scoreboard")
 print("5. Delete a scoreboard")
-print("Recent command is " + currentcmd)
+print("Tips: Your all command are saved to your local disk! Named 'recentcommand.txt'")
+
 
 options = input("Option Number: ")
 
