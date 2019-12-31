@@ -55,6 +55,36 @@ def createsb():
         print("Converting...")
         currentcmd = "/scoreboard objectives add " + sbname + " playerKillCount " + sbdisplayname
         print("We are done! The command is " + currentcmd)
+    if types == "5":
+        print("Converting...")
+        currentcmd = "/scoreboard objectives add " + sbname + " totalKillCount " + sbdisplayname
+        print("We are done! The command is " + currentcmd)
+    if types == "6":
+        print("Converting...")
+        currentcmd = "/scoreboard objectives add " + sbname + " health " + sbdisplayname
+        print("We are done! The command is " + currentcmd)
+    if types == "7":
+        print("Converting...")
+        currentcmd = "/scoreboard objectives add " + sbname + " xp " + sbdisplayname
+        print("We are done! The command is " + currentcmd)
+    if types == "8":
+        print("Converting...")
+        currentcmd = "/scoreboard objectives add " + sbname + " level " + sbdisplayname
+        print("We are done! The command is " + currentcmd)
+    if types == "9":
+        print("Converting...")
+        currentcmd = "/scoreboard objectives add " + sbname + " food " + sbdisplayname
+        print("We are done! The command is " + currentcmd)
+    if types == "10":
+        print("Converting...")
+        currentcmd = "/scoreboard objectives add " + sbname + " air " + sbdisplayname
+        print("We are done! The command is " + currentcmd)
+    if types == "11":
+        print("Converting...")
+        currentcmd = "/scoreboard objectives add " + sbname + " armor " + sbdisplayname
+        print("We are done! The command is " + currentcmd)
+    else:
+        print("We cannot reach the command!")
 
 
 # user run
