@@ -106,13 +106,63 @@ def displaysb():
         print("Converting...")
         currentcmd = "/scoreboard objectives setdisplay belowName " + sbname
         print("We are done! The command is " + currentcmd)
-
+# modify scoreboard
+def modifysb():
+    print("This wizard will help you to modify your scoreboard.")
+    sbname = input(" Enter your scoreboard's name: ")
+    print("Who is the target?")
+    print("1. Nearest player")
+    print("2. Random player")
+    print("3. All players")
+    print("4. All Entities")
+    print("5. The entity executing the current command")
+    print("6. Furthest player")
+    target = input("Choose one(1-6): ")
+    if target == "1":
+        who = "@p"
+    if target == "2":
+        who = "@r"
+    if target == "3":
+        who = "@a"
+    if target == "4":
+        who = "@e"
+    if target == "5":
+        who = "@s"
+    if target == "6":
+        who = "@p[c=-1]"
+    print("What do you want to do?")
+    print("1. set")
+    print("2. add")
+    print("3. sub")
+    print("4. reset")
+    udo = input("Choose one(1-4): ")
+    if udo == "1":
+        values = input("Set to: ")
+    if udo == "2":
+        values = input("Add: ")
+    if udo == "3":
+        values = input("Sub: ")
+    if udo == "4":
+        pass
+    print("Start Converting...")
+    if udo != "4":
+        if udo == "1":
+            currentcmd = "/scoreboard players set " + target +  " " + sbname + " " + values
+        if udo == "2":
+            currentcmd = "/scoreboard players add " " "  + target + " " + sbname + " " + values
+        if udo == "3":
+            currentcmd = "/scoreboard players remove " " " + target + " " + sbname + " " + values
+    if udo == "4":
+        currentcmd = "/scoreboard players reset " + target + " " + sbname
+    print("We are done! The command is " + currentcmd)
+    
 
 # user run
 print("Adjust you can execute commands: ")
 print("1. List all exist scoreboards")
 print("2. Create a scoreboard")
 print("3. Display a scoreboard")
+print("4. Modify a scoreboard")
 
 options = input("Option Number: ")
 
@@ -123,3 +173,5 @@ if options == "2":
     createsb()
 if options == "3":
     displaysb()
+if options == "4":
+    modifysb()
