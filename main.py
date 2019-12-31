@@ -39,6 +39,7 @@ def createsb():
     print("air: The remaining air in the current dive is consistent with Air in NBT.")
     print("armor: Current armor value (this value was 0 before the armor value was first updated).")
     types = input("Option(1-11): ")
+    print("Don't forget to display it!")
     if types == "1":
         print("Converting...")
         currentcmd = "/scoreboard objectives add " + sbname +  " dummy " + sbdisplayname
@@ -85,17 +86,40 @@ def createsb():
         print("We are done! The command is " + currentcmd)
     else:
         print("We cannot reach the command!")
+# show scoreboard
+def displaysb():
+    sbname = input("Enter the scoreboard name(Not display name, Leave blank to clear the selected display): ")
+    print("Where do you want to put it?")
+    print("1. Shown after TAB key player name")
+    print("2. Show on the right side of the screen")
+    print("3. Shown under player name (visible in multiplayer mode)")
+    opt = input("Select some where(1-3): ")
+    if opt == "1":
+        print("Converting...")
+        currentcmd = "/scoreboard objectives setdisplay list " + sbname
+        print("We are done! The command is " + currentcmd)
+    if opt == "2":
+        print("Converting...")
+        currentcmd = "/scoreboard objectives setdisplay sidebar " + sbname
+        print("We are done! The command is " + currentcmd)
+    if opt == "3":
+        print("Converting...")
+        currentcmd = "/scoreboard objectives setdisplay belowName " + sbname
+        print("We are done! The command is " + currentcmd)
 
 
 # user run
 print("Adjust you can execute commands: ")
 print("1. List all exist scoreboards")
 print("2. Create a scoreboard")
+print("3. Display a scoreboard")
 
 options = input("Option Number: ")
 
 # judge options
 if options == "1":
     listall()
-elif options == "2":
+if options == "2":
     createsb()
+if options == "3":
+    displaysb()
