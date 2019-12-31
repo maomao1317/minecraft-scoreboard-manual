@@ -174,6 +174,7 @@ print("2. Create a scoreboard")
 print("3. Display a scoreboard")
 print("4. Modify a scoreboard")
 print("5. Delete a scoreboard")
+print("Recent command is " + currentcmd)
 
 options = input("Option Number: ")
 
