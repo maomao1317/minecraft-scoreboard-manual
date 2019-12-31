@@ -117,7 +117,8 @@ def modifysb():
     print("4. All Entities")
     print("5. The entity executing the current command")
     print("6. Furthest player")
-    target = input("Choose one(1-6): ")
+    print("7. Player's Name")
+    target = input("Choose one(1-7): ")
     if target == "1":
         who = "@p"
     if target == "2":
@@ -130,6 +131,8 @@ def modifysb():
         who = "@s"
     if target == "6":
         who = "@p[c=-1]"
+    if target == "7":
+        who = input("Target's name: ")
     print("What do you want to do?")
     print("1. set")
     print("2. add")
@@ -155,7 +158,7 @@ def modifysb():
     if udo == "4":
         currentcmd = "/scoreboard players reset " + target + " " + sbname
     print("We are done! The command is " + currentcmd)
-    
+
 
 # user run
 print("Adjust you can execute commands: ")
