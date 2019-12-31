@@ -152,12 +152,19 @@ def modifysb():
         if udo == "1":
             currentcmd = "/scoreboard players set " + who +  " " + sbname + " " + values
         if udo == "2":
-            currentcmd = "/scoreboard players add " " "  + who + " " + sbname + " " + values
+            currentcmd = "/scoreboard players add "   + who + " " + sbname + " " + values
         if udo == "3":
-            currentcmd = "/scoreboard players remove " " " + who + " " + sbname + " " + values
+            currentcmd = "/scoreboard players remove "  + who + " " + sbname + " " + values
     if udo == "4":
         currentcmd = "/scoreboard players reset " + who + " " + sbname
     print("We are done! The command is " + currentcmd)
+# delete a scoreboard
+def deletesb():
+    sbname = input("Scoreboard name: ")
+    print("Converting...")
+    currentcmd = "/scoreboard objectives remove " + sbname + " "
+    print("We are done! The command is " + currentcmd)
+# endfunction
 
 
 # user run
@@ -166,6 +173,7 @@ print("1. List all exist scoreboards")
 print("2. Create a scoreboard")
 print("3. Display a scoreboard")
 print("4. Modify a scoreboard")
+print("5. Delete a scoreboard")
 
 options = input("Option Number: ")
 
@@ -178,3 +186,5 @@ if options == "3":
     displaysb()
 if options == "4":
     modifysb()
+if options == "5":
+    deletesb()
