@@ -150,13 +150,13 @@ def modifysb():
     print("Start Converting...")
     if udo != "4":
         if udo == "1":
-            currentcmd = "/scoreboard players set " + target +  " " + sbname + " " + values
+            currentcmd = "/scoreboard players set " + who +  " " + sbname + " " + values
         if udo == "2":
-            currentcmd = "/scoreboard players add " " "  + target + " " + sbname + " " + values
+            currentcmd = "/scoreboard players add " " "  + who + " " + sbname + " " + values
         if udo == "3":
-            currentcmd = "/scoreboard players remove " " " + target + " " + sbname + " " + values
+            currentcmd = "/scoreboard players remove " " " + who + " " + sbname + " " + values
     if udo == "4":
-        currentcmd = "/scoreboard players reset " + target + " " + sbname
+        currentcmd = "/scoreboard players reset " + who + " " + sbname
     print("We are done! The command is " + currentcmd)
 
 
