@@ -43,9 +43,17 @@ def createsb():
         print("Converting...")
         currentcmd = "/scoreboard objectives add " + sbname +  " dummy " + sbdisplayname
         print("We are done! The command is " + currentcmd)
-    elif options == "2":
+    if types == "2":
         print("Converting...")
         currentcmd = "/scoreboard objectives add " + sbname +  " trigger " + sbdisplayname
+        print("We are done! The command is " + currentcmd)
+    if types == "3":
+        print("Converting...")
+        currentcmd = "/scoreboard objectives add " + sbname + " deathCount "+ sbdisplayname
+        print("We are done! The command is " + currentcmd)
+    if types == "4":
+        print("Converting...")
+        currentcmd = "/scoreboard objectives add " + sbname + " playerKillCount " + sbdisplayname
         print("We are done! The command is " + currentcmd)
 
 
