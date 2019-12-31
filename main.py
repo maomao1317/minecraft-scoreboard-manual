@@ -43,6 +43,10 @@ def createsb():
         print("Converting...")
         currentcmd = "/scoreboard objectives add " + sbname +  " dummy " + sbdisplayname
         print("We are done! The command is " + currentcmd)
+    elif options == "2":
+        print("Converting...")
+        currentcmd = "/scoreboard objectives add " + sbname +  " trigger " + sbdisplayname
+        print("We are done! The command is " + currentcmd)
 
 
 # user run
