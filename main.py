@@ -6,7 +6,7 @@ import json
 # list all scoreboard
 def listall():
     print("This is the command: ")
-    with open("commands/listallcommand.cmds", 'r') as f_obj:
+    with open("commands/describe.plain.xml", 'r') as f_obj:
         cmd = f_obj.read()
         print(cmd)
     currentcmd = "/scoreboard objectives list"
