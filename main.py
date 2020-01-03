@@ -179,6 +179,10 @@ def deletesb():
         json.dump(currentcmd, f_obj)
         print("We saved it to your disk!")
 # endfunction
+# default escape
+def basicexit():
+    print("Press any key to exit this program")
+    system("pause")
 
 
 # user run
@@ -196,11 +200,16 @@ options = input("Option Number: ")
 # judge options
 if options == "1":
     listall()
+    basicexit()
 if options == "2":
     createsb()
+    basicexit()
 if options == "3":
     displaysb()
+    basicexit()
 if options == "4":
     modifysb()
+    basicexit()
 if options == "5":
     deletesb()
+    basicexit()
