@@ -3,6 +3,12 @@ import os
 # import user dump
 import json
 
+# first run
+try:
+    with open("recentcommand.txt") as f_obj:
+        total = f_obj.read()
+except FileNotFoundError:
+    print("You are first time to run this program!")
 # list all scoreboard
 def listall():
     print("This is the command: ")
@@ -178,11 +184,23 @@ def deletesb():
     with open("recentcommand.txt", 'a') as f_obj:
         json.dump(currentcmd, f_obj)
         print("We saved it to your disk!")
-# endfunction
+# endsbfunction
+# begin export function
+def exptojson():
+    print("We are exporting...")
+    print("Opening recentcommand.txt")
+    try:
+        with open("recentcommand.txt") as f_obj:
+            export = f_obj.read()
+            with open("export.json", 'w') as json_obj:
+                dump = json.dump(export)
+                print("Exported! Saved to export.json")
+    except FileNotFoundError:
+        print("recentcommand.txt Did not found!")
 # default escape
 def basicexit():
     print("Press any key to exit this program")
-    system("pause")
+    os.system("pause")
 
 
 # user run
@@ -192,6 +210,7 @@ print("2. Create a scoreboard")
 print("3. Display a scoreboard")
 print("4. Modify a scoreboard")
 print("5. Delete a scoreboard")
+print("6. Export All Recent Command to json")
 print("Tips: Your all command are saved to your local disk! Named 'recentcommand.txt'")
 
 
@@ -212,4 +231,7 @@ if options == "4":
     basicexit()
 if options == "5":
     deletesb()
+    basicexit()
+if options == "6":
+    exptojson()
     basicexit()
