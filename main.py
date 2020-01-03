@@ -220,9 +220,9 @@ print("3. Display a scoreboard")
 print("4. Modify a scoreboard")
 print("5. Delete a scoreboard")
 print("6. Export All Recent Command to json")
-print("Tips: Your all command are saved to your local disk! Named 'recentcommand.txt'")
+print("Tips: Your all command will save to your local disk! Named 'recentcommand.txt'")
 
-
+# user input
 options = input("Option Number: ")
 
 # judge options
