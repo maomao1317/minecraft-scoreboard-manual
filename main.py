@@ -2,16 +2,8 @@
 import os
 # import user dump
 import json
-
-# license
-try:
-    with open("reg.key") as f_obj:
-        licensekey = f_obj.read()
-        print("Registered!")
-        print("License Key: " + licensekey)
-except FileNotFoundError:
-    print("Unregistered!")
-    print("Trial Mode! Trial Key: TRIAL-MSKEY-00001")
+# import delay
+import time
 # first run
 try:
     with open("recentcommand.txt") as f_obj:
