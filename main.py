@@ -203,10 +203,7 @@ def exptojson():
                 print("Exported! Saved to export.json")
     except FileNotFoundError:
         print("recentcommand.txt Did not found!")
-# default escape
-def basicexit():
-    print("Press any key to exit this program")
-    os.system("pause")
+
 
 
 while True:
@@ -230,21 +227,15 @@ while True:
     # judge options
     if options == "1":
         listall()
-        basicexit()
     if options == "2":
         createsb()
-        basicexit()
     if options == "3":
         displaysb()
-        basicexit()
     if options == "4":
         modifysb()
-        basicexit()
     if options == "5":
         deletesb()
-        basicexit()
     if options == "6":
         exptojson()
-        basicexit()
     else:
         exit()
