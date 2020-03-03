@@ -18,6 +18,7 @@ def listall():
         print(cmd)
     currentcmd = "/scoreboard objectives list"
     with open("recentcommand.txt", 'a') as f_obj:
+		f_obj.write("\n")
         json.dump(currentcmd, f_obj)
         print("We saved it to your disk!")
 # create scoreboard
@@ -96,6 +97,7 @@ def createsb():
         currentcmd = "/scoreboard objectives add " + sbname + " armor " + sbdisplayname
         print("We are done! The command is " + currentcmd)
     with open("recentcommand.txt", 'a') as f_obj:
+		f_obj.write("\n")
         json.dump(currentcmd, f_obj)
         print("We saved it to your disk!")
 # show scoreboard
@@ -119,6 +121,7 @@ def displaysb():
         currentcmd = "/scoreboard objectives setdisplay belowName " + sbname
         print("We are done! The command is " + currentcmd)
     with open("recentcommand.txt", 'a') as f_obj:
+		f_obj.write("\n")
         json.dump(currentcmd, f_obj)
         print("We saved it to your disk!")
 # modify scoreboard
@@ -174,6 +177,7 @@ def modifysb():
         currentcmd = "/scoreboard players reset " + who + " " + sbname
     print("We are done! The command is " + currentcmd)
     with open("recentcommand.txt", 'a') as f_obj:
+		f_obj.write("\n")
         json.dump(currentcmd, f_obj)
         print("We saved it to your disk!")
 # delete a scoreboard
@@ -183,6 +187,7 @@ def deletesb():
     currentcmd = "/scoreboard objectives remove " + sbname + " "
     print("We are done! The command is " + currentcmd)
     with open("recentcommand.txt", 'a') as f_obj:
+		f_obj.write("\n")
         json.dump(currentcmd, f_obj)
         print("We saved it to your disk!")
 # endsbfunction
@@ -204,35 +209,42 @@ def basicexit():
     os.system("pause")
 
 
-# user run
-print("Adjust you can execute commands: ")
-print("1. List all exist scoreboards")
-print("2. Create a scoreboard")
-print("3. Display a scoreboard")
-print("4. Modify a scoreboard")
-print("5. Delete a scoreboard")
-print("6. Export All Recent Command to json")
-print("Tips: Your all command will save to your local disk! Named 'recentcommand.txt'")
+while True:
+	# user run
+	print("\n")
+	print("\n")
+	print("\n")
+	print("Adjust you can execute commands: ")
+	print("1. List all exist scoreboards")
+	print("2. Create a scoreboard")
+	print("3. Display a scoreboard")
+	print("4. Modify a scoreboard")
+	print("5. Delete a scoreboard")
+	print("6. Export All Recent Command to json")
+	print("q. Quit")
+	print("Tips: Your all command will save to your local disk! Named 'recentcommand.txt'")
 
-# user input
-options = input("Option Number: ")
+	# user input
+	options = input("Option Number: ")
 
-# judge options
-if options == "1":
-    listall()
-    basicexit()
-if options == "2":
-    createsb()
-    basicexit()
-if options == "3":
-    displaysb()
-    basicexit()
-if options == "4":
-    modifysb()
-    basicexit()
-if options == "5":
-    deletesb()
-    basicexit()
-if options == "6":
-    exptojson()
-    basicexit()
+	# judge options
+	if options == "1":
+		listall()
+		basicexit()
+	if options == "2":
+		createsb()
+		basicexit()
+	if options == "3":
+		displaysb()
+		basicexit()
+	if options == "4":
+		modifysb()
+		basicexit()
+	if options == "5":
+		deletesb()
+		basicexit()
+	if options == "6":
+		exptojson()
+		basicexit()
+	else:
+		exit()
