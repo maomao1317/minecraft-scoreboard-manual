@@ -227,15 +227,21 @@ while True:
     # judge options
     if options == "1":
         listall()
+        continue
     if options == "2":
         createsb()
+        continue
     if options == "3":
         displaysb()
+        continue
     if options == "4":
         modifysb()
+        continue
     if options == "5":
         deletesb()
+        continue
     if options == "6":
         exptojson()
+        continue
     else:
         exit()
