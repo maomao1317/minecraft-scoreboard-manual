@@ -199,7 +199,7 @@ def exptojson():
         with open("recentcommand.txt") as f_obj:
             export = f_obj.read()
             with open("export.json", 'w') as json_obj:
-                dump = json.dump(export)
+                dump = json.dump(export, json_obj)
                 print("Exported! Saved to export.json")
     except FileNotFoundError:
         print("recentcommand.txt Did not found!")
