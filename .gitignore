@@ -2,3 +2,7 @@ __pycache__
 *.pyc
 recentcommand.txt
 export.json
+MCScoreboard.egg-info
+dist
+setup.py
+
